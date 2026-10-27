@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    font-family: Vazirmatn, Tahoma, sans-serif;
+    background: #1c1410;
+    color: #f6efe6;
+  }
+}
+
+.studio-shell {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.panel {
+  overflow: auto;
+  background: #241912;
+  border-left: 1px solid #3d2c22;
+  padding: 16px 16px 40px;
+}
+
+.stage {
+  position: relative;
+  min-width: 0;
+  background: #12100e;
+}
+
+.stage canvas {
+  display: block;
+}
+
+.boot {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #e7d7c4;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.brand h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.brand span {
+  font-size: 0.75rem;
+  color: #c9b39a;
+}
+
+.section {
+  border: 1px solid #3d2c22;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #2c1f17;
+}
+
+.section h2 {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+}
+
+.row {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 8px;
+  font-size: 0.78rem;
+  color: #e8d8c8;
+}
+
+.row input[type="range"] {
+  width: 100%;
+  accent-color: #c4553a;
+}
+
+.checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+}
+
+.file {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #c4553a;
+  color: white;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.file input {
+  display: none;
+}
+
+.ghost {
+  background: transparent;
+  color: #f6efe6;
+  border: 1px solid #6a5040;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+}
+
+.looks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.looks button {
+  border-radius: 10px;
+  border: 1px solid #6a5040;
+  background: #1c1410;
+  color: #f6efe6;
+  padding: 8px 6px;
+  font-size: 0.75rem;
+}
+
+.looks button.on {
+  background: #c4553a;
+  border-color: #c4553a;
+}
+
+.hint {
+  font-size: 0.72rem;
+  color: #c9b39a;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+
+.shot {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 2;
+  background: #f3e6d0;
+  color: #3a2418;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.vignette {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(0, 0, 0, var(--v, 0.3)) 100%);
+}
+
+@media (max-width: 860px) {
+  .studio-shell {
+    grid-template-columns: 1fr;
+    grid-template-rows: 46dvh 1fr;
+    height: 100dvh;
+  }
+  .stage {
+    order: -1;
+  }
+  .panel {
+    border-left: 0;
+    border-top: 1px solid #3d2c22;
+  }
+}
